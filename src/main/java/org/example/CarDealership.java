@@ -20,8 +20,11 @@ public class CarDealership {
     }
 
     public void sellCar(Car car){
-        this.moneyMade += car.getPrice() * dealerMarkUp;
-        this.inventory.remove(car);
+        if(this.inventory.contains(car)){
+            this.moneyMade += car.getPrice() * dealerMarkUp;
+            this.inventory.remove(car);
+        }
+
     }
 
     public int getInventoryCount(){
